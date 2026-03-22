@@ -80,6 +80,7 @@ const FILES = {
   "about.txt": { url: "/assets/about.txt" },
   "contact.txt": { url: "/assets/contact.txt" },
   "resume.pdf": { url: "/assets/resume.pdf" },
+  "secret.txt": { url: "/assets/secret.txt" },
 };
 
 const HELP_MESSAGE = "Type 'help' to show a list of available commands.";
