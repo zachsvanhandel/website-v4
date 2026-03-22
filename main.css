@@ -1,0 +1,166 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --bg-muted: #151b23;
+  --fg: #f0f6fc;
+  --fg-muted: #9198a1;
+  --fg-accent: #4493f8;
+  --fg-danger: #f85149;
+  --border: #3d444d;
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-muted: #f6f8fa;
+  --fg: #1f2328;
+  --fg-muted: #59636e;
+  --fg-accent: #0969da;
+  --fg-danger: #d1242f;
+  --border: #d1d9e0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "JetBrains Mono", monospace;
+  font-variant-ligatures: none;
+  padding: 16px;
+}
+
+.window {
+  width: min(100%, calc(100vw - 32px));
+  height: calc(100vh - 32px);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlebar {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-muted);
+  display: flex;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.button.close {
+  background: #ff5c5f;
+}
+
+.button.minimize {
+  background: #fac800;
+}
+
+.button.maximize {
+  background: #34c759;
+}
+
+.title {
+  margin: auto;
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+  line-height: 24px;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 18px 20px 16px;
+}
+
+.output {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.entry {
+  margin-bottom: 14px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.response {
+  color: var(--fg-muted);
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.response.error {
+  color: var(--fg-danger);
+}
+
+.response.accent {
+  color: var(--fg-accent);
+}
+
+.command-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 0;
+}
+
+.command {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  caret-color: var(--fg-accent);
+  caret-shape: block;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 10px;
+  }
+
+  .window {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+  }
+
+  .content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .command-line {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

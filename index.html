@@ -3,12 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>v4</title>
+
+    <title>Zach Van Handel</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="main.css" rel="stylesheet" />
+
+    <script src="main.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <div>Hello world</div>
+    <main class="window">
+      <header class="titlebar">
+        <div class="button-group">
+          <span class="button close"></span>
+          <span class="button minimize"></span>
+          <span class="button maximize"></span>
+        </div>
+
+        <div id="title" class="title">guest@localhost</div>
+      </header>
+
+      <section class="content">
+        <div id="output" class="output"></div>
+
+        <form id="command-line" class="command-line" autocomplete="off">
+          <label id="prompt" for="command">$</label>
+
+          <input
+            id="command"
+            class="command"
+            name="command"
+            type="text"
+            spellcheck="false"
+            autocapitalize="off"
+            autofocus
+          />
+        </form>
+      </section>
     </main>
   </body>
 </html>
